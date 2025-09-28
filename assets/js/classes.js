@@ -40,3 +40,42 @@ class Wizard extends Character {
         this.defense = 8
     }
 }
+
+class Mob extends Character {
+    constructor() {
+        super('Mob');
+        this.life = 50;
+        this.maxLife = this.life;
+        this.attack = 5;
+        this.defense = 5;
+    }
+}
+
+class Boss extends Character {
+    constructor() {
+        super('Boss');
+        this.life = 150;
+        this.maxLife = this.life;
+        this.attack = 25;
+        this.defense = 15;
+    }
+}
+
+class Stage {
+    constructor(fighter1, fighter2, fighter1El, fighter2El) {
+        this.fighter1 = fighter1;
+        this.fighter2 = fighter2;
+        this.fighter1El = fighter1El;
+        this.fighter2El = fighter2El;
+    }
+
+    start() {
+        this.update();
+    }
+
+    update() {
+        //Fighter 1
+        this.fighter1El.querySelector('.name').innerHTML = this.fighter1.name;
+        this.fighter2El.querySelector('.name').innerHTML = this.fighter2.name;
+    }
+}
